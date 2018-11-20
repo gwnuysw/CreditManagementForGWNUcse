@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>이수 과목 입력</title>
+		<style type = "text/css">
+		#pos
+		{
+			position : fixed;
+			left : 40%;
+			top : 30%;
+		}
+	</style>
+	</head>
+
+	<body>
+		<form action = "#" accept-charset="utf-8" name = "student_infor" method = "post">
+		<fieldset style="width:700">
+		<legend><font size = 6>학생 정보</font></legend>
+			<label for = studentid>학번</label>
+			<input type = "text" name = "studentid" size = 30/><br>
+			<label for = "grade">학기</label>
+			<select id = "grade">
+				<option>16년도 1학기</option>
+				<option>16년도 2학기</option>
+				<option>17년도 1학기</option>
+				<option>17년도 2학기</option>
+				<option>18년도 1학기</option>
+				<option>18년도 2학기</option>
+			</select>
+			<input type = "submit" value = "입력" name = "input">
+		</fieldset>
+		<fieldset style = "width:700">
+		<legend><font size = 6>개설 과목</font></legend>
+			<input type = "submit" value = "저장" name = "save">
+			&nbsp;
+			<input type = "submit" value = "확인" name = "select">
+		</form>
+	</body>
+<html>
