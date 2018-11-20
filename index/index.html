@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>사용자 선택</title>
+		<style type = "text/css">
+		#pos
+		{
+			position : fixed;
+			left : 40%;
+			top : 30%;
+		}
+	</style>
+	</head>
+	
+	<body>
+		<form id = pos action = "#" accept-charset="utf-8" name = "index" method = "post">
+		<fieldset style="width:300">
+		<legend><font size = 6>사용자 선택</font></legend>
+			<div 
+				style="display: flex;
+				align-items: center;
+				justify-content: center;"
+				margin-bottom: 1rem;>
+			<p>사용자 종류를 선택하세요.</p>
+			</div>	
+			<div 
+				style="display: flex;
+				align-items: center;
+				justify-content: center;">
+				<label><input type = "radio" name = "user" value = "student">학생</label>
+				&nbsp;&nbsp;&nbsp;
+				<label><input type = "radio" name = "user" value = "admin">관리자</label>
+			</div>
+			<br>
+			<div
+				style="display: flex;
+				align-items: center;
+				justify-content: center;">
+				<button type="submit" style="height: 10%; width: 20%;">확인</button>
+			</div>
+		</fieldset>
+		</form>
+	</body>
+<html>
