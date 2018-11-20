@@ -1,10 +1,67 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>관리자 선택</title>
 	</head>
 
 	<body>
-		<form action = "#" accept-charset="utf-8" name = "admin_sub" method = "post">
+		<?php
+		if(!empty($_POST)){
+			//take input values
+			function test_input($data) {
+				$data = trim($data);
+				$data = stripslashes($data);
+				$data = htmlspecialchars($data);
+				return $data;
+			}
+			$name = $item = $coursecode = $period = $gaincredit = "";
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				$name = test_input($_POST["name"]);
+				$item = test_input($_POST["item"]);
+				$coursecode = test_input($_POST["coursecode"]);
+				$period = test_input($_POST["period"]);
+				$gaincredit = test_input($_POST["gaincredit"]);
+			}
+
+			//make connection
+			$servername = "127.0.0.1"; //맥에서 이렇게 하고 브라우저창의 url 에 "localhost"대신 "127.0.0.1"로 접속해야 접속이 된다.
+			//$servername = "localhost"; 우분투에서 이렇게 하고 "localhost"로 그냥 들어가도 된다.
+			$username = "root";
+			$password = "mysql1q2w3e";
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password);
+
+			// Check connection
+			if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+			}
+			echo "Connected successfully";
+
+			//select database
+			$conn->select_db('Creditmanage');
+			/* return name of current default database */
+			if ($result = $conn->query("SELECT DATABASE()")) {
+				$row = $result->fetch_row();
+				printf("Default database is %s.\n", $row[0]);
+				$result->close();
+			}
+
+			//insert tuple
+			$sql = "INSERT INTO course (coursecode, name, gaincredit, item, period)
+			 VALUES ('".$coursecode."', '".$name."','".$gaincredit."','".$item."', '".$period."')";
+
+
+			if (mysqli_query($conn, $sql)) {
+				echo "New record created successfully";
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+			mysqli_close($conn);
+		}
+
+		?>
+		<form action = "#" accept-charset="utf-8" name = "admin_sub" method = "post" id="CourseInsertion">
 		<fieldset style="width:700">
 		<legend><font size = 6>과목 삭제</font></legend>
 			<fieldset style="650">
@@ -36,36 +93,48 @@
 		<legend><font size = 6>과목 삽입</font></legend>
 			<font size = 4>
 			<label for = "class">영역</label>
-			<select id = "class">
-				<option>전공기초</option>
-				<option>전공선택</option>
-				<option>전공필수</option>
-				<option>공학인증</option>
+			<select id = "class" name = "item">
+				<option value="전공기초">전공기초</option>
+				<option value="전공선택">전공선택</option>
+				<option value="전공필수">전공필수</option>
+				<!--<option >공학인증</option>-->
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "credit">취득학점</label>
-				<select id = "creditmn">
-				<option>2</option>
-				<option>3</option>
+				<select id = "creditmn" name="gaincredit">
+				<option value=2>2</option>
+				<option value=3>3</option>
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "code">과목코드</label>
-			<input type = "text" name = "code" placeholder = "과목코드" size = 30/><br>
+			<input type = "text" name = "coursecode" placeholder = "과목코드" size = 30/><br>
 			<label for = "grade">이수학기</label>
-			<select id = "grade">
-				<option>16년도 1학기</option>
-				<option>16년도 2학기</option>
-				<option>17년도 1학기</option>
-				<option>17년도 2학기</option>
-				<option>18년도 1학기</option>
-				<option>18년도 2학기</option>
+			<select id = "grade" name=period>
+				<option value="16-1">16년도 1학기</option>
+				<option value="16-2">16년도 2학기</option>
+				<option value="17-1">17년도 1학기</option>
+				<option value="17-2">17년도 2학기</option>
+				<option value="18-1">18년도 1학기</option>
+				<option value="18-2">18년도 2학기</option>
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "subject">과목명</label>
-			<input type = "text" name = "subject" placeholder="과목명" size = 46/><br>
+			<input type = "text" name = "name" placeholder="과목명" size = 46/><br>
 			<input type = "submit" value = "삽입">
 			</font>
 		</fieldset>
 		</form>
+		<?php
+			echo "<h2>Your Input:</h2>";
+			echo $coursecode;
+			echo "<br>";
+			echo $name;
+			echo "<br>";
+			echo $gaincredit;
+			echo "<br>";
+			echo $item;
+			echo "<br>";
+			echo $period;
+		?>
 	</body>
 <html>
