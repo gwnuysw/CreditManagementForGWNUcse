@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 		<meta charset="utf-8">
 		<title>관리자 선택</title>
@@ -24,7 +24,7 @@
 			}
 
 			//make connection
-			$servername = "127.0.0.1"; //맥에서 이렇게 하고 브라우저창의 url 에 "localhost"대신 "127.0.0.1"로 접속해야 접속이 된다.
+			$servername = "127.0.0.1"; //맥에서 이렇게 하고 브라우저창의 url 에 "localhost"대신 "127.0.0.1"로 접속해야 접속이 된다.
 			//$servername = "localhost"; 우분투에서 이렇게 하고 "localhost"로 그냥 들어가도 된다.
 			$username = "root";
 			$password = "mysql1q2w3e";
@@ -88,6 +88,7 @@
 
 				</font>
 			</fieldset>
+			<input type = "submit" value = "삭제" name = "delete">
 		</fieldset>
 		<fieldset style="width:700">
 		<legend><font size = 6>과목 삽입</font></legend>
@@ -97,11 +98,11 @@
 				<option value="전공기초">전공기초</option>
 				<option value="전공선택">전공선택</option>
 				<option value="전공필수">전공필수</option>
-				<!--<option >공학인증</option>-->
+				<option value="공학인증">공학인증</option>
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "credit">취득학점</label>
-				<select id = "creditmn" name="gaincredit">
+			<select id = "creditmn" name="gaincredit">
 				<option value=2>2</option>
 				<option value=3>3</option>
 			</select>
@@ -120,8 +121,24 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "subject">과목명</label>
 			<input type = "text" name = "name" placeholder="과목명" size = 46/><br>
-			<input type = "submit" value = "삽입">
+			<input type = "submit" value = "삽입" name = "insert">
 			</font>
+		</fieldset>
+		<fieldset style = "width : 700">
+		<legend><font size = 6>졸업 요건</font></legend>
+			<font size = 4>
+			<label for = "class">영역</label>
+			<select id = "class" name = "item">
+				<option value="전공기초">전공기초</option>
+				<option value="전공선택">전공선택</option>
+				<option value="전공필수">전공필수</option>
+				<option value="공학인증">공학인증</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for = "credit">필요학점</label>
+			<input type = "text" name = "credit" placeholder="필요학점" size = 40/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type = "submit" value = "수정" name = "change">
 		</fieldset>
 		</form>
 		<?php
