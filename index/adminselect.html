@@ -14,7 +14,6 @@
 				$data = htmlspecialchars($data);
 				return $data;
 			}
-			
 			$name = $item = $coursecode = $period = $gaincredit = "";
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$name = test_input($_POST["name"]);
@@ -23,10 +22,7 @@
 				$period = test_input($_POST["period"]);
 				$gaincredit = test_input($_POST["gaincredit"]);
 			}
-			
-			include("database.php"); // database 정보를 불러온다.
-			
-/*
+
 			//make connection
 			$servername = "127.0.0.1"; //맥에서 이렇게 하고 브라우저창의 url 에 "localhost"대신 "127.0.0.1"로 접속해야 접속이 된다.
 			//$servername = "localhost"; 우분투에서 이렇게 하고 "localhost"로 그냥 들어가도 된다.
@@ -41,39 +37,27 @@
 					die("Connection failed: " . $conn->connect_error);
 			}
 			echo "Connected successfully";
-*/
+
 			//select database
-			//$conn->select_db('Creditmanage');
+			$conn->select_db('Creditmanage');
 			/* return name of current default database */
-			/*if ($result = $conn->query("SELECT DATABASE()")) {
+			if ($result = $conn->query("SELECT DATABASE()")) {
 				$row = $result->fetch_row();
 				printf("Default database is %s.\n", $row[0]);
 				$result->close();
-			}*/
+			}
 
-			
-			
 			//insert tuple
 			$sql = "INSERT INTO course (coursecode, name, gaincredit, item, period)
-			 VALUES ('".$coursecode."', '".$name."','".$gaincredit."','".$item."', '".$period."')"; // query문 작성
-			 
-			$result=mysql_query($sql); // query문 실행
-			
-			if($result == false) {
-				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-			} else {
-				echo "New record created successfully";
-			}
+			 VALUES ('".$coursecode."', '".$name."','".$gaincredit."','".$item."', '".$period."')";
 
-			/*if (mysqli_query($conn, $sql)) {
+
+			if (mysqli_query($conn, $sql)) {
 				echo "New record created successfully";
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
-			mysqli_close($conn);*/
-			
-			
-			
+			mysqli_close($conn);
 		}
 
 		?>
