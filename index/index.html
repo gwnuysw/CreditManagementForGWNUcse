@@ -1,46 +1,35 @@
-
-﻿<html>
-	<head>
-		<meta charset="utf-8">
-		<title>사용자 선택</title>
-
-		<style type = "text/css">
-		#pos
-		{
-			position : fixed;
-			left : 40%;
-			top : 30%;
-		}
-	</style>
-
-	</head>
-
-	<body>
-
-		<fieldset   id = pos style="width:300">
-		<legend><font size = 6>사용자 선택</font></legend>
-			<div
-				style="display: flex;
-				align-items: center;
-				justify-content: center;"
-				margin-bottom: 1rem;>
-
-			<p>사용자 종류를 선택하세요.</p>
-
-			</div>
-			<div
-				style="display: flex;
-				align-items: center;
-				justify-content: center;">
-
-
-				<ul>
-				<li><a href="http://127.0.0.1/studentselect.html" target="_self"> 학생 </a></li>
-
-
-				<li><a href="http://127.0.0.1/adminselect.html" target="_self"> 관리자 </a></li>
-				</ul>
-			</div>
-			<br>
-	</body>
+<!DOCTYPE html>
 <html>
+	<head>
+		<!-- META DATA -->
+		<meta charset="UTF-8" >
+		<meta name="author" content="">
+		<meta name="description" content="">
+		
+		<!-- CSS3 -->
+		<link href="css/layout/login.css" type="text/css" rel="stylesheet">
+		
+		<title>:: 강릉원주대학교 학점관리시스템</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="border">
+			<br>
+			<img src="img/login.png" alt="강릉원주대학교 로고" id="logo"></a>
+			<div class="text">학점관리시스템</div>
+			<br>
+			<!-- <form>
+				<input type="text" id="id" placeholder="아이디">
+				<input type="password" id="pwd" placeholder="비밀번호">
+				<button type="submit">로그인</button>
+			</form> -->
+			
+			<ul class="menu">
+				<li><a href="./studentselect.html" target="_self"> 학생 </a></li>
+				<li><a href="./login_check.php" target="_self"> 관리자 </a></li>
+			</ul>
+			
+		</div>
+	</body>
+</html>
