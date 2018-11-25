@@ -136,10 +136,9 @@
   $resultC = intval($resultC);
   $resultD = intval($resultD);
   $extra = intval($extra);
-
   $B[0] = $a[0]-$resultA-$extra;
   $B[1] = $a[1]-$resultB;
   $B[2] = $a[2]-$resultC;
   $B[3] = $a[3]-$resultD;
-  echo "교양 : " .$B[0].", 전공기초 : " .$B[1]. ", 전공선택 : " .$B[2].", 전공필수 : " .$B[2]."<br>";
+  echo "교양 : " .$B[0].", 전공기초 : " .$B[1]. ", 전공선택 : " .$B[2].", 전공필수 : " .$B[3]."<br>";
 ?>
