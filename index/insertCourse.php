@@ -1,4 +1,3 @@
-//insert tuple
 <?php
   $name = $item = $coursecode = $period = $gaincredit = "";
   if ($_SERVER["REQUEST_METHOD"] == "POST") {

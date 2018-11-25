@@ -21,7 +21,6 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$insertType = test_input($_POST["button"]);
 		}
-		echo $insertType;
 		if($insertType === "과목삽입"){
 			include("insertCourse.php");
 		}
@@ -32,10 +31,10 @@
 			include("deleteCourse.php");
 		}
 	}
-	else{
-		echo "<br>";
-		include("showCourses.php");
-	}
+
+	echo "<br>";
+	include("showCourses.php");
+
 	mysqli_close($conn);
 	?>
 
@@ -48,7 +47,7 @@
 				<option value="전공기초">전공기초</option>
 				<option value="전공선택">전공선택</option>
 				<option value="전공필수">전공필수</option>
-				<option value="공학인증교양">공학인증교양</option>
+				<option value="교양">공학인증교양</option>
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for = "credit">취득학점</label>
