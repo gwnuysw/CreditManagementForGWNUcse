@@ -10,6 +10,8 @@
 - 이번 학기 어떤 강의를 수강해야 하는지 알 수 있다.
 
 
-사이트 주소 [https://creditmanager-yiseokwon1014379263.codeanyapp.com/](https://creditmanager-yiseokwon1014379263.codeanyapp.com/)
+<s>사이트 주소 [https://creditmanager-yiseokwon1014379263.codeanyapp.com/](https://creditmanager-yiseokwon1014379263.codeanyapp.com/)
 
-위 사이트는 codeanywhere에서 container를 먼저 시동한 후 접속가능하다.
+위 사이트는 codeanywhere에서 container를 먼저 시동한 후 접속가능하다.</s>
+
+mysql 한글 인코딩 문제 때문에 codeanywhere에서 이제 사용안합니다.
