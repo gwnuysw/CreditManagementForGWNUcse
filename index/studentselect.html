@@ -64,7 +64,7 @@
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$insertType = test_input($_POST["button"]);
 				}
-				echo "조회\n";
+				#echo "조회";
 				if($insertType === "조회"){
 					include("showCoursePeriod.php");
 				}
