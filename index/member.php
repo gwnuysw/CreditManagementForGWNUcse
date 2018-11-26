@@ -2,11 +2,11 @@
   $id = $_POST['id'];
   $pw = $_POST['password'];
   $connet=mysql_connect("localhost","id","password");
- 
+
   //db스키마에 맞게 수정해야됨
   mysql_select_db("",$connet);
-  $sqlrec="select * from member where id='$id' and pw='password'";
-   
+  $sqlrec="select * from member where id='$id' and pw='$pw'";
+
 $info=mysql_query($sqlrec,$connet);
 if(!info)
 {

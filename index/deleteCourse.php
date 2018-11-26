@@ -1,11 +1,11 @@
 <?php
-  $coursecode"";
+  $coursecode="";
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $coursecode = test_input($_POST["coursecode"]);
   }
 
-  $sql = "INSERT INTO course (coursecode, name, gaincredit, item, period)
-   VALUES ('".$coursecode."', '".$name."','".$gaincredit."','".$item."', '".$period."')"; // query문 작성
+  echo $coursecode;
+  $sql = "delete from course where coursecode='".$coursecode."'";
 
   /****************석원*/
   if (mysqli_query($conn, $sql)) {
