@@ -2,11 +2,11 @@
 
   echo "
   <form action = './adminselect.html' accept-charset='utf-8' name = 'admin_sub' method = 'post' id='CourseInsertion'>
-    <fieldset style='width:700'>
+    <fieldset style='width:800'>
     <legend><font size = 6>과목 삭제</font></legend>
 
 
-      <fieldset style='650'>
+      <fieldset style='750'>
       <legend><fontsize = 5>전공 필수</font></legend>
           <font size = 4>
         ";
@@ -29,7 +29,7 @@
 </fieldset><br>
 
 
-<fieldset style='650'>
+<fieldset style='750'>
 <legend><fontsize = 5>전공 선택</font></legend>
 <font size = 4>
 
@@ -53,7 +53,7 @@
 </fieldset><br>
 
 
-<fieldset style='650'>
+<fieldset style='750'>
 <legend><fontsize = 5>전공 기초</font></legend>
   <font size = 4>
 
@@ -78,7 +78,7 @@
 </fieldset><br>
 
 
-<fieldset style='650'>
+<fieldset style='750'>
 <legend><fontsize = 5>공학 인증</font></legend>
   <font size = 4>
 
