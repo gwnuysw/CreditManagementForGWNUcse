@@ -19,7 +19,7 @@ if($result == false) {
 
 /****************여기서부터 내가 작성한 방식*/
 if (mysqli_query($conn, $sql)) {
-  echo "New record created successfully";
+  echo "\New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
