@@ -58,12 +58,13 @@
 			<option value="18-2">18년도 2학기</option>
 		</select>
 			<input type = "submit" value = "조회" name = "button">
+			<br>
 			<?php
 			if(!empty($_POST)){
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$insertType = test_input($_POST["button"]);
 				}
-				echo "조회";
+				echo "조회\n";
 				if($insertType === "조회"){
 					include("showCoursePeriod.php");
 				}
