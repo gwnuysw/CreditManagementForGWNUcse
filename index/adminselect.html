@@ -1,5 +1,6 @@
 ﻿<html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="padding.css"/>
 		<meta charset="utf-8">
 		<title>관리자 선택</title>
 	</head>
@@ -42,6 +43,7 @@
 		<fieldset style="width:700">
 		<legend><font size = 6>과목 삽입</font></legend>
 			<font size = 4>
+		<div>
 			<label for = "class">영역</label>
 			<select id = "class" name = "item">
 				<option value="전공기초">전공기초</option>
@@ -49,15 +51,24 @@
 				<option value="전공필수">전공필수</option>
 				<option value="교양">공학인증교양</option>
 			</select>
+		</div>
+
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>
 			<label for = "credit">취득학점</label>
 			<select id = "creditmn" name="gaincredit">
 				<option value=2>2</option>
 				<option value=3>3</option>
 			</select>
+		</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<div>
 			<label for = "code">과목코드</label>
 			<input type = "text" name = "coursecode" placeholder = "과목코드" size = 30/><br>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>
 			<label for = "grade">이수학기</label>
 			<select id = "grade" name=period>
 				<option value="16-1">16년도 1학기</option>
@@ -67,11 +78,14 @@
 				<option value="18-1">18년도 1학기</option>
 				<option value="18-2">18년도 2학기</option>
 			</select>
+		</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>	
 			<label for = "subject">과목명</label>
 			<input type = "text" name = "name" placeholder="과목명" size = 46/>
 			<input type = "submit" value = "과목삽입" name = "button">
 			</font>
+		</div>
 		</fieldset>
 		</form>
 
@@ -79,6 +93,16 @@
 		<fieldset style = "width : 700">
 		<legend><font size = 6>졸업 요건</font></legend>
 			<font size = 4>
+		<div>
+			<label for="entered_yead">입학년도</label>
+			<select name="year" id="year">
+				<option value="2016">2016년</option>
+				<option value="2015">2015년</option>
+				<option value="2014">2014년</option>
+			</select>
+		</div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>
 			<label for = "class">영역</label>
 			<select id = "class" name = "item">
 				<option value="전공기초">전공기초</option>
@@ -86,11 +110,14 @@
 				<option value="전공필수">전공필수</option>
 				<option value="교양">교양</option>
 			</select>
+		</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>
 			<label for = "credit">필요학점</label>
 			<input type = "text" name = "credit" placeholder="필요학점" size = 40/>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type = "submit" value = "졸업요건삽입" name = "button">
+		</div>
 		</fieldset>
 		</form>
 	</body>

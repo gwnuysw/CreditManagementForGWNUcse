@@ -13,6 +13,7 @@ if(!info)
    echo"<script>alert('id 또는 password가 일치하지 않습니다.');history.back();</script>";
    eixt();
 }
+//
   if($id == "admin" && $pw == 1234){
     header("Location:http://localhost/admin.html", true, 301);
     exit();
