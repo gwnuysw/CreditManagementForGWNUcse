@@ -12,7 +12,8 @@
   $sql = "select course.coursecode, course.name, course.gaincredit, course.period
           from signuped
           inner join course on signuped.coursecode = course.coursecode
-          where signuped.studentid = '".$studentid."'";
+          where signuped.studentid = '".$studentid."'
+          and course.period = signuped.period";
   $result = mysqli_query($conn, $sql);
   echo "<h2>수강 과목 목록</h2><br>";
 
