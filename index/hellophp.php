@@ -1,7 +1,9 @@
 <?php
-header('Content-Type: text/html; charset=UTF-8');
-	include("databaseInit.php");
+//내경우 로그인 아이디는 admin 비번은 1234
 	session_start();
+//header('Content-Type: text/html; charset=UTF-8');
+	include("databaseInit.php");
+
   $id = "";
   $pw = 0;
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,8 +33,10 @@ header('Content-Type: text/html; charset=UTF-8');
     return $data;
   }
 	if (mysqli_query($conn, $sql)) {
-    echo "record deleted successfully";
+		$_SESSION['userid']=$id;
+		header("Location:./adminselect.html", true, 301);
   } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<script>alert(\"아이디 또는 비밀번호를 잘못 입력하셨습니다.\");
+window.location.href='./login.html';</script>";
   }
 ?>

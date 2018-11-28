@@ -27,13 +27,13 @@
   if ($conn->connect_error) {
   		die("Connection failed: " . $conn->connect_error);
   }
-  echo "Connected successfully";
+  //echo "Connected successfully";
   //select database
   $conn->select_db('Creditmanage');
   // return name of current default database
   if ($result = $conn->query("SELECT DATABASE()")) {
   	$row = $result->fetch_row();
-  	printf("Default database is %s.\n", $row[0]);
+  	//printf("Default database is %s.\n", $row[0]);
   	$result->close();
   }
 ?>

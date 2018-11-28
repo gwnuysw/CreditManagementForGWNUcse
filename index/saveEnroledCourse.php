@@ -1,11 +1,13 @@
 <?php
-$studentid = $coursecode = "";
+$studentid = $coursecode = $period = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $studentid = test_input($_POST["studentid"]);
   $coursecode = test_input($_POST["coursecode"]);
+  $period = test_input($_POST["period"]);
 }
-$sql = "INSERT INTO signuped (studentid, coursecode)
- VALUES ('".$studentid."', '".$coursecode."')"; // query문 작성
+
+$sql = "INSERT INTO signuped (studentid, coursecode, period)
+ VALUES ('".$studentid."', '".$coursecode."', '".$period."')"; // query문 작성
 
 
 /****************여기서부터 호영이가 작성한 방식*********

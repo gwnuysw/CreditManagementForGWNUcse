@@ -102,6 +102,8 @@
     <br>
     <label>과목코드</label>
     <input type = 'text' name = 'coursecode' placeholder = '과목코드' size = 30/>
+    <label>학기</label>
+    <input type = 'text' name = 'period' placeholder = '학기' size = 30/>
         <input type = 'submit' value = '과목삭제' name = 'button'>
       </fieldset>
     </form>";
