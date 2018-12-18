@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	$period_array = get_period_array();
 	$param = $_GET['idx'];
 	if (!$param) {
@@ -6,14 +6,17 @@
 		$param = get_key_from_array($period_array,0);
 	}
 
-	$test_id = 20160966;
-?>
-
+	$test_id = $_SESSION['id'];
+ ?>
+<script>
+</script>
 <div class="border">
 	<br>
 	<div class="text">
 	개설교과목록
 	</div>
+
+
 	<div class="tab">
 		<div class="button-group">
 		<?php
@@ -54,6 +57,9 @@
 							<td align="center"><?php echo $row["gaincredit"]; ?></td>
 							<td align="center"><?php echo $row["period"]; ?></td>
 						</tr>
+						<?php
+							}
+						?>
 					</tbody>
 				</table>
 				<input type='submit' class='button'  name='save' value='저장하기'>
@@ -88,7 +94,7 @@
 				</tr>
 				<tr>
 					<?php
-						list($cbasic_m, $celective_m, $cessential_m,  $celective_c) = get_completed_graduation(20160966);
+						list($cbasic_m, $celective_m, $cessential_m,  $celective_c) = get_completed_graduation($test_id);
 					?>
 					<th>이수학점</th>
 					<td><?php echo $cbasic_m; ?></td>
