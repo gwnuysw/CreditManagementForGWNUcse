@@ -41,6 +41,7 @@ function get_key_from_array($arr, $index) {
 	}
 	return null;
 }
+
 function login_check($user,$pass) {
 	global $db_conn;
 
