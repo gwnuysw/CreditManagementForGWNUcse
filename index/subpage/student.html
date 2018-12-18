@@ -1,4 +1,5 @@
 ﻿<?php
+	//session_start();
 	$period_array = get_period_array();
 	$param = $_GET['idx'];
 	if (!$param) {
@@ -6,7 +7,8 @@
 		$param = get_key_from_array($period_array,0);
 	}
 
-	$test_id = 20160966;
+	$test_id = $_SESSION['id'];
+	//echo $test_id;
  ?>
 <script>
 </script>
@@ -15,8 +17,6 @@
 	<div class="text">
 	개설교과목록
 	</div>
-
-
 	<div class="tab">
 		<div class="button-group">
 		<?php
@@ -57,9 +57,6 @@
 							<td align="center"><?php echo $row["gaincredit"]; ?></td>
 							<td align="center"><?php echo $row["period"]; ?></td>
 						</tr>
-						<?php
-							}
-						?>
 					</tbody>
 				</table>
 				<input type='submit' class='button'  name='save' value='저장하기'>
@@ -85,7 +82,7 @@
 				<tr>
 					<th>기준학점</th>
 					<?php
-						list($sbasic_m, $selective_m, $sessential_m,  $selective_c) = get_graduation(2016);
+						list($sbasic_m, $selective_m, $sessential_m,  $selective_c) = get_graduation(2016); //invoke from common.php
 					?>
 					<td><?php echo $sbasic_m; ?></td>
 					<td><?php echo $selective_m; ?></td>
@@ -94,7 +91,7 @@
 				</tr>
 				<tr>
 					<?php
-						list($cbasic_m, $celective_m, $cessential_m,  $celective_c) = get_completed_graduation(20160966);
+						list($cbasic_m, $celective_m, $cessential_m,  $celective_c) = get_completed_graduation($test_id); //invoke from common.php
 					?>
 					<th>이수학점</th>
 					<td><?php echo $cbasic_m; ?></td>

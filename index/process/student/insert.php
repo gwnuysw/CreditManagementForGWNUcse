@@ -4,7 +4,7 @@
 	$selected_subjects = $_POST['course'];
 
 	$signuped_subjects = array();
-	$test_id = $_POST['studentid'];	// session id
+	$test_id = $_SESSION['id'];	// session id
 
 	$query = "DELETE FROM `signuped` WHERE `studentid` = {$test_id} AND `period` = '{$selected_period}'";
 	$result = $db_conn->query($query);

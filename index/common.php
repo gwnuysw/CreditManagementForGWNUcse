@@ -41,21 +41,18 @@ function get_key_from_array($arr, $index) {
 	}
 	return null;
 }
-
-
-
 function login_check($user,$pass) {
 	global $db_conn;
-	
+
 	$user = safety_param($user);
 	$pass = safety_param($pass);
-	
+
 	// 괄호안에는 변수 리터럴을 반영한다.
 	$sql = "SELECT * FROM `user_info` WHERE `userid` = '[$user]' AND `pw` = '[$pass]'";
 	$result = $db_conn->query($sql);
-	
+
 	return $result->num_rows;
-	
+
 }
 
 function isLoggedIn() {
@@ -80,7 +77,7 @@ function parse_period($str) {
 
 function get_period_array($sort = '') {
 	global $db_conn; // 함수내 전역변수 사용시 global을 선언한다.
-	
+
 	$arr = array();
 	$sql = "SELECT DISTINCT `period` FROM `course`";
 	if ($sort) {
@@ -93,19 +90,19 @@ function get_period_array($sort = '') {
 		}
 	}
 	return $arr;
-	
+
 }
 
 function get_signuped_array($id, $period) {
 	global $db_conn;
-	
+
 	$id = safety_param($id);
 	$period = safety_param($period);
-	
+
 	$signupedA = array();
 	$sql = "SELECT `coursecode`, `period` FROM `signuped` WHERE `studentid` = '{$id}' AND `period` = '{$period}'";
 	$result = $db_conn->query($sql);
-	
+
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			array_push($signupedA, $row["coursecode"]);
@@ -117,9 +114,9 @@ function get_signuped_array($id, $period) {
 
 function get_course_by_period($period) {
 	global $db_conn;
-	
+
 	$period = safety_param($period);
-	
+
 	$arr = array();
 	$sql = "SELECT * FROM `course` WHERE `period` = '{$period}' ORDER BY `item` desc";
 	$result = $db_conn->query($sql);
@@ -140,7 +137,7 @@ function alert($msg='', $url = '') {
 	if ($url) {
 		echo "window.location.replace('{$url}');";
 	}
-	
+
 	echo "</script>"; // script end
 }
 
@@ -152,9 +149,9 @@ function print_var($object) {
 
 function print_course_items($type) {
 	global $db_conn;
-	
+
 	$type = safety_param($type);
-	
+
 	$sql = "SELECT * FROM `course` WHERE `item` = '{$type}'";
 	$result = $db_conn->query($sql);
 	if ($result->num_rows > 0) {
@@ -170,10 +167,10 @@ function print_course_items($type) {
 
 function get_graduation($admission) {
 	global $db_conn;
-	
+
 	$sql = "SELECT * FROM `graduation` WHERE `graduation` = ".$admission."";
 	$result = $db_conn->query($sql);
-	
+
 	//return $result->fetch_assoc();
 	$val = $result->fetch_assoc();
 	return array($val["basic_m"], $val["elective_m"], $val["essential_m"], $val["elective_c"]);
@@ -181,17 +178,17 @@ function get_graduation($admission) {
 
 function get_completed_graduation($studentid) {
 	global $db_conn;
-	
+
 	$signed = array();
 	$sql = "SELECT * FROM `signuped` WHERE `studentid` = '".$studentid."'";
 	$result = $db_conn->query($sql);
-	
+
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			$signed[$row["coursecode"]] = $row["period"];
 		}
 	}
-	
+
 	//list($basic_m, $elective_m, $essential_m,  $elective_c) = get_graduation(2016);
 	$basic_m = 0;
 	$elective_m = 0;
@@ -202,7 +199,7 @@ function get_completed_graduation($studentid) {
 		$result = $db_conn->query($sql);
 		$row = $result->fetch_assoc();
 
-		
+
 		if($row["item"] == "전공기초") {
 			$basic_m += $row["gaincredit"];
 		} else if($row["item"] == "전공선택") {
@@ -213,6 +210,6 @@ function get_completed_graduation($studentid) {
 			$elective_c += $row["gaincredit"];
 		}
 	}
-	
+
 	return array($basic_m, $elective_m, $essential_m,  $elective_c);
 }
