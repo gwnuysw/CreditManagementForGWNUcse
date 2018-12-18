@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" >
+		<meta name="author" content="">
+		<meta name="description" content="">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<title>:: 강릉원주대학교 학점관리시스템</title>
+	</head>
+	<body>
+		<!-- 페이지 상단에 불러올 내용 -->
+		<?php include "subpage/_head.html"; ?>
+		<!--
+			* wrap_ 접미사가 붙는건 컨테이터를 감싼다는 뜻
+			(예: wrap_header, wrap_content, wrap_footer)
+		-->
+		<div class="wrap_content">
+		<!-- 페이지는 subpage 폴더에 있는 내용을 불러온다. -->
+		<?php
+			include ("subpage/".PAGE.".html");
+		?>
+		</div>
+		<!-- 페이지 하단에 불러올 내용 -->
+		<?php include "subpage/_foot.html"; ?>
+	</body>
+</html>

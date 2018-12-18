@@ -1,0 +1,165 @@
+﻿.border {
+	border : 2px solid gray;
+	width : 535px;
+	height : auto;
+	margin : auto;
+	padding : 10px;
+}
+/* 버튼 그룹 */
+.button-group .button {
+	background-color: #e7e7e7; 
+    border: none;
+    padding: 11px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	color : #505050;
+    font-size: 12px;
+	font-weight : bold;
+	transition: 0.1s;
+    cursor: pointer;
+}
+
+.button-group .button:hover {
+	background-color: #ddd;
+}
+
+.button-group .active {
+	background-color:#bbb;
+}
+
+
+.text {
+	font-weight : bold;
+	color : #505050;
+	text-align : center;
+	margin-bottom : 30px;
+	font-size : 37px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab input {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab input:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab input.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#pos
+{
+	position : fixed;
+	left : 40%;
+	top : 30%;
+}
+
+
+
+.text {
+	font-weight : bold;
+	color : #505050;
+	text-align : center;
+	margin-bottom : 30px;
+	font-size : 37px;
+}
+
+.menu {
+	padding-left:0;
+}
+
+
+.menu li {
+	list-style:none;
+	list-style-position: inside;
+	margin:auto;
+	border-bottom : 1px solid #EEEEEE;
+	height : 50px;
+	text-align : center;
+}
+
+.menu li:last-child {
+	border-bottom : none;
+}
+
+.menu li:hover {
+	background-color : #2a85ee;
+}
+
+.menu a {
+	text-decoration : none;
+	display : inline-block;
+	width : 100%;
+	height : 100%;
+	padding-top : 15px;
+	font-weight:bold;
+	font-size: 20px;
+	color : #505050;
+}
+
+.menu a:visited {
+	text-decoration : none;
+}
+
+.menu a:hover {
+	color : white;
+}
+
+.menu a:visited {
+	color : #505050;
+}
+
+table {
+	width : 100%;
+}
+
+.calc {
+	border : 1px solid #444444;
+	border-collapse : collapse;
+}
+
+.calc th {
+    border: 1px solid #444444;
+ }
+ 
+ .calc td {
+	 border: 1px solid #444444;
+	 font-weight : bold;
+	 text-align : right;
+ }
+
+ .satisfy {
+	 color : blue;
+ }
+ 
+ .nonsatisfy {
+	 color : red;
+	 font-weight : bold;
+ }

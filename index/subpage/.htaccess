@@ -1,0 +1,2 @@
+#서브페이지 접근 금지
+deny from all

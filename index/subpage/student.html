@@ -1,0 +1,115 @@
+﻿<?php
+	$period_array = get_period_array();
+	$param = $_GET['idx'];
+	if (!$param) {
+		// 첫페이지 인덱스 설정.
+		$param = get_key_from_array($period_array,0);
+	}
+
+	$test_id = 20160966;
+ ?>
+<script>
+</script>
+<div class="border">
+	<br>
+	<div class="text">
+	개설교과목록
+	</div>
+
+
+	<div class="tab">
+		<div class="button-group">
+		<?php
+			foreach ($period_array as $key => $value) {
+				$active = ($key == $param) ? "active" : "";
+				echo "<a class='button {$active}' href='/student/{$key}'>{$value}</a>";
+			}
+		?>
+		</div>
+		<div id='contents' class='tabcontent'>
+			<form action="/student/action/insert" accept-charset="utf-8" name="tests" method="POST">
+				<input type="hidden" name="period" value="<?php echo $param ?>" />
+				<table width="100%">
+					<thead>
+						<tr>
+							<th></th>
+							<th>항목</th>
+							<th>과목</th>
+							<th>학점</th>
+							<th>개설학기</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							foreach (get_course_by_period($param) as $row) {
+								$isChecked = "";
+								foreach (get_signuped_array($test_id,$param) as $course) {
+									if ($row['coursecode'] == $course) {
+										$isChecked = "checked";
+										break;
+									}
+								}
+						?>
+						<tr>
+							<td><?php echo "<input type='checkbox' class='container' name='course[]' value='{$row["coursecode"]}' {$isChecked} />"; ?></td>
+							<td><?php echo $row["item"]; ?></td>
+							<td><?php echo $row["name"]; ?></td>
+							<td align="center"><?php echo $row["gaincredit"]; ?></td>
+							<td align="center"><?php echo $row["period"]; ?></td>
+						</tr>
+						<?php
+							}
+						?>
+					</tbody>
+				</table>
+				<input type='submit' class='button'  name='save' value='저장하기'>
+			</form>
+		</div>
+	</div>
+	<div class=''>
+		<br><br>
+		<div class="text">
+		이수학점계산
+		</div>
+		<table class='calc'>
+			<thead>
+				<tr>
+					<th></th>
+					<th>전공기초</th>
+					<th>전공선택</th>
+					<th>전공필수</th>
+					<th>교양</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>기준학점</th>
+					<?php
+						list($sbasic_m, $selective_m, $sessential_m,  $selective_c) = get_graduation(2016);
+					?>
+					<td><?php echo $sbasic_m; ?></td>
+					<td><?php echo $selective_m; ?></td>
+					<td><?php echo $sessential_m; ?></td>
+					<td><?php echo $selective_c ; ?></td>
+				</tr>
+				<tr>
+					<?php
+						list($cbasic_m, $celective_m, $cessential_m,  $celective_c) = get_completed_graduation(20160966);
+					?>
+					<th>이수학점</th>
+					<td><?php echo $cbasic_m; ?></td>
+					<td><?php echo $celective_m; ?></td>
+					<td><?php echo $cessential_m; ?></td>
+					<td><?php echo $celective_c ; ?></td>
+				</tr>
+				<tr>
+					<th>미이수학점</th>
+					<td class="<?php if(($rbasic_m = $sbasic_m - $cbasic_m) > 0) echo 'nonsatisfy'; else echo 'satisfy'; ?>"><?php echo $rbasic_m; ?></td>
+					<td class="<?php if(($relective_m = $selective_m - $celective_m) > 0) echo 'nonsatisfy'; else echo 'satisfy'; ?>"><?php echo $relective_m; ?></td>
+					<td class="<?php if(($ressential_m = $sessential_m - $cessential_m) > 0) echo 'nonsatisfy'; else echo 'satisfy'; ?>"><?php echo $ressential_m; ?></td>
+					<td class="<?php if(($relective_c = $selective_c - $celective_c) > 0) echo 'nonsatisfy'; else echo 'satisfy'; ?>"><?php echo $relective_c; ?></td>
+				</tr>
+		</table>
+		<br><br>
+	</div>
+</div>

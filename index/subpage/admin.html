@@ -1,0 +1,90 @@
+	<form action='/admin/action/DeleteCourse' accept-charset='utf-8' name='admin_sub' method='post' id='CourseInsertion'>
+		<fieldset style='width:800px;'>
+			<legend><font size=6>과목 삭제</font></legend>
+			<fieldset style='750'>
+				<legend><font size="5">전공 필수</font></legend>
+				<font size="4"><?php echo print_course_items("전공필수"); ?></font>
+			</fieldset>
+			<br>
+			<fieldset style='750'>
+				<legend><font size="5">전공 선택</font></legend>
+				<font size="4"><?php print_course_items("전공선택"); ?></font>
+			</fieldset>
+			<br>
+			<fieldset style='750'>
+				<legend><font size="5">전공 기초</font></legend>
+				<font size="4"><?php print_course_items("전공기초"); ?></font>
+			</fieldset>
+			<br>
+			<fieldset style='750'>
+				<legend><font size="5">공학 인증</font></legend>
+				<font size="4"><?php print_course_items("교양"); ?></font>
+			</fieldset>
+			<br>
+			<label>과목코드</label>
+			<input type='text' name='coursecode' placeholder='과목코드' size=30/>
+			<input type='submit' value='과목삭제' name='button'>
+		</fieldset>
+	</form>
+	<form action="/admin/action/InsertCourse" accept-charset="utf-8" name="admin_sub" method="post" id="CourseInsertion">
+		<fieldset style="width:800px">
+		<legend><font size=6>과목 삽입</font></legend>
+			<font size=4>
+				<label for="class">영역</label>
+				<select id="class" name = "item">
+					<option value="전공기초">전공기초</option>
+					<option value="전공선택">전공선택</option>
+					<option value="전공필수">전공필수</option>
+					<option value="교양">공학인증교양</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label for="credit">취득학점</label>
+				<select id="creditmn" name="gaincredit">
+					<option value=2>2</option>
+					<option value=3>3</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label for="code">과목코드</label>
+				<input type="text" name="coursecode" placeholder="과목코드" size=30/><br>
+				<label for="grade">이수학기</label>
+				<select id="grade" name="period">
+				<?php foreach(get_period_array("asc") as $key => $value) { ?>
+					<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+				<?php } ?>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label for="subject">과목명</label>
+				<input type="text" name="name" placeholder="과목명" size=46/>
+				<input type="submit" value="과목삽입" name="button">
+			</font>
+		</fieldset>
+	</form>
+	<form action="/admin/action/InsertGraduation" accept-charset="utf-8" name="admin_sub" method="post" id="CourseInsertion">
+		<fieldset style="width:800px">
+		<legend><font size=6>졸업 요건</font></legend>
+			<font size=4>
+			<div class="graduation-year">
+				<label for="class">졸업년도</label>
+				<input name="graduation" placeholder="(예:2016)" required value="" />
+			</div>
+			<div class="subject-group">
+				<div class="subject-item">
+					<label for="credit">전공기초</label>
+					<input type="text" name="basic_m" placeholder="필요 학점을 입력하세요." required size=40/>
+				</div>
+				<div class="subject-item">
+					<label for="credit">전공선택</label>
+					<input type="text" name="elective_m" placeholder="필요 학점을 입력하세요." required size=40/>
+				</div>
+				<div class="subject-item">
+					<label for="credit">전공필수</label>
+					<input type="text" name="essential_m" placeholder="필요 학점을 입력하세요." required size=40/>
+				</div>
+				<div class="subject-item">
+					<label for="credit">교양</label>
+					<input type="text" name="elective_c" placeholder="필요 학점을 입력하세요." required size=40/>
+				</div>
+			</div>
+			<input type="submit" value="졸업요건삽입" name="button">
+		</fieldset>
+	</form>

@@ -1,0 +1,14 @@
+﻿/* author : 이호영 */
+.border {
+	border : 2px solid gray;
+	width : 400px;
+	height : 420px;
+	margin : auto;
+	padding : 10px;
+}
+
+img {
+	display : block;
+	margin : auto;
+	margin-bottom : 60px;
+}

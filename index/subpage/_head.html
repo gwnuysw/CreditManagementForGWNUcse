@@ -1,0 +1,8 @@
+<div class="wrap_header">
+	<?php if (isLoggedIn()) { ?>
+	<div class="member" style="width:300px; margin:0 auto;">
+		<span>하위^^ <?php echo $_SESSION['id']; ?></span>
+		<a href="/logout">로그아웃</a>
+	</div>
+	<?php } ?>
+</div>
