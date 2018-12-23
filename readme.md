@@ -111,3 +111,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 ![학생2](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/studentPage2.png?raw=true)
 
 ![관리자](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/adminPage2.png?raw=true)
+
+# 개선점
+
+원래 발주팀에서 요구 했던 것은 실제 학교에서 사용하는 DB와 연동하는 것인데 사실상 불가능 하닫 보니 관리자 페이지를 따로 만들어서 개설과목을 관리하도록 했습니다. 그러나 교수님 말씀대로 실제 연동가능하다고 가정하고 작업을 진행 했으면 더 좋은 결과물이 나왔을지도 모르겠습니다. 또 완성도가 높으면 학교에서도 저희 프로젝트를 가져다 쓸수 있으니까요
