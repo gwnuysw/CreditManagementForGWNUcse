@@ -2,7 +2,16 @@
 
 강릉원주대학교 권기태 교수님의 소프트웨어공학 팀프로젝트입니다.
 
-**학점 관리 시스템의 주요 기능**
+## 팀구성
+
+- **박태규**
+- 김선민
+- 이지현
+- 이호영
+- 이석원
+
+역할분담과 회의 내용, 작업 일지등은 위키페이지에 자세히 있습니다.
+## 학점 관리 시스템의 주요 기능
 
 - 학생이 그동안 어떤 강의을 수강했는지 알 수 있다.
 - 현재 까지 몇 학점을 이수 했는지 알수 있다.
@@ -64,7 +73,7 @@ CreditManage file의 디렉토리는 크게 두가지로 나눕니다. index디�
 
 
 생각보다 간단하죠??
-# 데이터 베이스 스키마
+## 데이터 베이스 스키마
 
 ProjectManage/cm.sql은 mysql데이터 베이스를 export해 놓은 파일입니다.
 
@@ -104,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-# 실행 화면
+## 실행 화면
 
 ![학생1](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/studentPage1.png?raw=true)
 
@@ -112,6 +121,6 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 
 ![관리자](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/adminPage2.png?raw=true)
 
-# 개선점
+## 개선점
 
 원래 발주팀에서 요구 했던 것은 실제 학교에서 사용하는 DB와 연동하는 것인데 사실상 불가능 하닫 보니 관리자 페이지를 따로 만들어서 개설과목을 관리하도록 했습니다. 그러나 교수님 말씀대로 실제 연동가능하다고 가정하고 작업을 진행 했으면 더 좋은 결과물이 나왔을지도 모르겠습니다. 또 완성도가 높으면 학교에서도 저희 프로젝트를 가져다 쓸수 있으니까요
