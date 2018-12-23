@@ -105,3 +105,9 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 ```
 
 # 실행 화면
+
+![학생1](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/studentPage1.png?raw=true)
+
+![학생2](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/studentPage2.png?raw=true)
+
+![관리자](https://github.com/gwnuysw/CreditManagementForGWNUcse/blob/master/ProjectManage/Images/adminPage2.png?raw=true)
