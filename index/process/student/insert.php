@@ -11,7 +11,8 @@
 	if ($result) {
 		if ($selected_subjects) {
 			foreach ($selected_subjects as $value) {
-				$query = "INSERT INTO `signuped`(`studentid`,`coursecode`,`period`) VALUES('{$test_id}','{$value}','{$selected_period}')";
+				$query = "INSERT INTO `signuped`(`studentid`,`coursecode`,`period`) 
+					VALUES('{$test_id}','{$value}','{$selected_period}')";
 				$db_conn->query($query);
 			}
 		}
